@@ -1,4 +1,5 @@
-// #1. Bubble Sort: simple but inefficient for large datasets 
+// #1. Bubble Sort: compares adjacent elements and swaps them if they are in wrong order 
+// runs in O(n^2) in worst/average cases 
 
 public static void bubbleSort(int[] arr)
   {
@@ -17,8 +18,8 @@ public static void bubbleSort(int[] arr)
   }
 }
 
-// #2. Selection Sort: simple, intuitive, not efficient
-
+// #2. Selection Sort: finds minimum element in unsorted part and swaps it with first element 
+// O(n^2) in all cases 
 public static void selectionSort(int[] arr)
   {
   int n = arr.length; 
@@ -39,7 +40,8 @@ public static void selectionSort(int[] arr)
 }
 
 
-// 3. Insertion Sort: Efficient for small datasets or nearly sorted arrays 
+// 3. Insertion Sort: iterates through array, inserting each element into correct possition
+// O(n) in best case, O(n^2) in worst case 
 public static void insertionSort(int[] arr)
   {
   int n = arr.length;
@@ -56,7 +58,8 @@ public static void insertionSort(int[] arr)
     }
 }
 
-// 4. Merge Sort; efficient, stable, time complexity of O(n log n) 
+// 4. Merge Sort: recursively divides array into two havles, sorts them independently and merges them 
+// O(n log n) in all cases 
 public static void mergeSort(int[] arr, int l, int r)
   {
   if (l < r)
@@ -112,7 +115,8 @@ public static void merge(int[] arr, int l, int m, int r)
 }
 
 
-// 5. Quick Sort; O(n^2) in worst case 
+// 5. Quick Sort: picks a pivot element, partitions array into two subarrays and recursively sorts them 
+// average time complexity of O(n log n), worst case O(n^2) 
 public static void quickSort(int[] arr, int low, int high)
   {
   if (low < high)
