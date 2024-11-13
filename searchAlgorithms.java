@@ -66,3 +66,25 @@ public static int jumpSearch(int[] arr, int target)
   }
   return -1;
 }
+
+// 4. Interpolation Search: estimates position of target value based on its value relative to endpoints of search interval 
+public static int interpolationSearch(int[] arr, int target)
+  {
+  int low = 0, high = arr.length - 1;
+  while(low <= high && target >= arr[low] && target <= arr[high])
+    {
+      int pos = low + (((high - low) / (arr[high] - arr[low])) * (target - arr[low])));
+      if (arr[pos] == target)
+      {
+        return pos;
+      }
+      else if (arr[pos] < target)
+      {
+        low = pos + 1; 
+      }
+      else
+      {
+        high = pos - 1; 
+      }
+    }
+  return // not found 
