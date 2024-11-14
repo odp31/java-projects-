@@ -62,3 +62,38 @@ public class TowerOfHanoi
     }
   }
 
+// 4. string reversal
+public static String reverseString(String str)
+  {
+  if (str.isEmpty()){
+  return str;
+} else {
+  return reverseString(str.substring(1)) + str.charAt(0); 
+}
+
+// 5. rec binary search 
+public static int binarySearch(int[] arr, int target, int low, int high)
+  {
+  if (low > high)
+  {
+    return -1;
+  }
+  int mid = (low + high) / 2; 
+  if (arr[mid] == target)
+  {
+    return mid;
+  }
+  else if (arr[mid] < target)
+  {
+    return binarySearch(arr, target, mid + 1, high);
+  }
+  else
+  {
+    return binarySearch(arr, target, low, mid - 1);
+  }
+}
+
+
+
+
+
